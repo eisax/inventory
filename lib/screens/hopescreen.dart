@@ -81,7 +81,61 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: Container(
                   color: Colors.grey.shade200,
-                  child: Center(child: Text("Content Area")),
+                  child: Column(
+                    children:
+                        ["New Requests", "Orders Pending", "Revenue"]
+                            .map(
+                              (e) => Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 16.0,
+                                  vertical: 8.0,
+                                ),
+                                height: 150,
+                                width: double.infinity,
+                                margin: EdgeInsets.only(bottom: 8.0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    width: 0.25,
+                                    color: Color(0xFF121212),
+                                  ),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      flex: 3,
+                                      child: Container(
+                                        padding: EdgeInsets.all(8),
+                                        height: 60,
+                                        width: double.infinity,
+                                        color: Colors.grey.shade300,
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                        height: 50,
+                                        
+                                        width: 50,
+                                        color: Colors.grey.shade500,
+                                      )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 8,),
+                                    Expanded(
+                                      flex: 4,
+                                      child: Container(
+                                        height: 60,
+                                        width: double.infinity,
+                                        color: Colors.grey.shade300,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
+                            .toList(),
+                  ),
                 ),
               ),
             ],
